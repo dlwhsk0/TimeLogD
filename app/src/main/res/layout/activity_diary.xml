@@ -76,96 +76,124 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:background="@drawable/edgenodown"
+            android:scrollbars="none"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:gravity="top">
 
-                <!--하단 드래그바-->
+
+                <ImageView
+                    android:id="@+id/ivComplete"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/check" />
+
+                <EditText
+                    android:id="@+id/diaryTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@null"
+                    android:text="글 제목"
+                    android:textColor="#000000"
+                    android:textSize="36dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/diaryTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="14:32 - 16:32"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="@+id/diaryTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/diaryTitle" />
+
+
+                <!--본문-->
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="0dp"
+                    android:layout_height="3dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/edgeall"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/diaryTime" />
+
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@drawable/edgetop"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:minHeight="500dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view">
 
-<!--                    <View-->
-<!--                        android:layout_width="120dp"-->
-<!--                        android:layout_height="8dp"-->
-<!--                        android:layout_marginTop="20dp"-->
-<!--                        android:background="@drawable/edgeall"-->
-<!--                        android:backgroundTint="#E8E8E8" />-->
-                </LinearLayout>
-
-                <!--하단 게시물-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1400dp"
-                    android:layout_marginTop="-30dp"
-                    android:background="@drawable/edgenotop"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/diaryTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="20dp"
-                        android:text="글 제목"
-                        android:textColor="#000000"
-                        android:textSize="36dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/diaryTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="20dp"
-                        android:text="14:32 - 16:32"
-                        android:textColor="#000000"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <View
-                        android:layout_width="360dp"
-                        android:layout_height="2dp"
-                        android:layout_marginTop="15dp"
-                        android:background="@drawable/edgeall"
-                        android:backgroundTint="#C8C8C8" />
-
-                    <!--본문-->
-                    <LinearLayout
+                    <EditText
+                        android:id="@+id/diaryContent"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/diaryContent"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
-                            android:text="글 내용"
-                            android:textColor="#000000"
-                            android:textSize="22dp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:text="글 내용"
+                        android:textColor="#000000"
+                        android:textSize="22dp" />
 
                 </LinearLayout>
 
-            </LinearLayout>
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical"-->
+<!--        tools:layout_editor_absoluteX="8dp"-->
+<!--        tools:layout_editor_absoluteY="405dp">-->
+
+<!--        &lt;!&ndash;하단 드래그바&ndash;&gt;-->
+<!--        &lt;!&ndash;                <LinearLayout&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_height="80dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:background="@drawable/edgetop"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:gravity="center_horizontal"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:orientation="vertical">&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                    <View&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_width="120dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_height="8dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_marginTop="20dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:background="@drawable/edgeall"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:backgroundTint="#E8E8E8" />&ndash;&gt;-->
+<!--        &lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
+
+<!--        &lt;!&ndash;하단 게시물&ndash;&gt;-->
+
+<!--    </LinearLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

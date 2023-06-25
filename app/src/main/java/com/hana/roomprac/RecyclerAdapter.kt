@@ -36,5 +36,6 @@ class RecyclerAdapter(val roomMemoList:List<RoomMemo>) : RecyclerView.Adapter<Re
                 textDatetime.text = sdf.format(roomMemo.datetime)
             }
         }
+
     }
 }

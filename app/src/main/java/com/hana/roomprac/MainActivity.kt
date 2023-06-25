@@ -1,6 +1,7 @@
 package com.hana.roomprac
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
@@ -25,10 +26,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-//        ivProfile.setOnClickListener {
-//            val intent = Intent(this, DiaryActivity::class.java)
-//            startActivity(intent)
-//        }
+        binding.ivProfile.setOnClickListener {
+            val intent = Intent(this, DiaryActivity::class.java)
+            startActivity(intent)
+        }
 
         // 빌드가 호출되는 순간 룸 헬퍼 클래스를 만들어서 전달해줌
         helper = Room.databaseBuilder(this, RoomHelper::class.java, "room_db")
