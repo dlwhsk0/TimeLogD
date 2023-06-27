@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
             recyclerMemo.adapter = memoAdapter
             recyclerMemo.layoutManager = LinearLayoutManager(this@MainActivity)
 
+            // 저장 버튼을 눌렀을 때
             buttonSave.setOnClickListener {
                 val content = editMemo.text.toString()
                 if(content.isNotEmpty()) {
@@ -61,6 +62,13 @@ class MainActivity : AppCompatActivity() {
     fun insertMemo(memo:RoomMemo) {
         CoroutineScope(Dispatchers.IO).launch {
             memoDAO.insert(memo) // insert도 서브에서
+            refreshAdapter()
+        }
+    }
+
+    fun deleteMemo(memo:RoomMemo) {
+        CoroutineScope(Dispatchers.IO).launch {
+            memoDAO.delete(memo)
             refreshAdapter()
         }
     }

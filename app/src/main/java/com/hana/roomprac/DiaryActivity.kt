@@ -1,8 +1,13 @@
 package com.hana.roomprac
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.room.Room
 import com.hana.roomprac.databinding.ActivityDiaryBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class DiaryActivity : AppCompatActivity() {
 
@@ -16,16 +21,34 @@ class DiaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        with(binding) {
-            val title = diaryTitle.text.toString()
-            val content = diaryContent.text.toString()
+        // 빌드가 호출되는 순간 룸 헬퍼 클래스를 만들어서 전달해줌
+        helper = Room.databaseBuilder(this, RoomHelper::class.java, "room_db")
+            .build()
+        memoDAO = helper.roomMemoDao()
 
-//            ivComplete.setOnClickListener {
-//                val intent = Intent(this, MainActivity::class.java)
-//            }
+        memoAdapter = RecyclerAdapter(memoList)
+
+        with(binding) {
+
+            ivComplete.setOnClickListener {// 화면 전환
+                val title = diaryTitle.text.toString()
+//                val content = diaryContent.text.toString()
+                if(title.isNotEmpty()) {
+                    val datetime = System.currentTimeMillis() // 시간 가져오기
+                    val memo = RoomMemo(title, datetime)
+                    insertMemo(memo)
+
+                    val intent = Intent(this@DiaryActivity, MainActivity::class.java)
+                    startActivity(intent)
+                }
+            }
         }
 
+    }
 
-
+    fun insertMemo(memo:RoomMemo) {
+        CoroutineScope(Dispatchers.IO).launch {
+            memoDAO.insert(memo) // insert도 서브에서
+        }
     }
 }
