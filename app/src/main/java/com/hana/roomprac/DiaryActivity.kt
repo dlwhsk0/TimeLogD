@@ -12,11 +12,12 @@ import kotlinx.coroutines.launch
 class DiaryActivity : AppCompatActivity() {
 
     val binding by lazy { ActivityDiaryBinding.inflate(layoutInflater) }
-    lateinit var helper:RoomHelper
+    lateinit var helper: RoomHelper
     lateinit var memoAdapter: RecyclerAdapter
     val memoList = mutableListOf<RoomMemo>() // 초기화
-    lateinit var memoDAO:RoomMemoDAO
+    lateinit var memoDAO: RoomMemoDAO
 
+//    lateinit var memo: RoomMemo
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -27,6 +28,8 @@ class DiaryActivity : AppCompatActivity() {
         memoDAO = helper.roomMemoDao()
 
         memoAdapter = RecyclerAdapter(memoList)
+
+//        memo = intent.getSerializableExtra("memo") as RoomMemo
 
         with(binding) {
 

@@ -70,12 +70,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        android:layout_marginBottom="16dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/upperBar"
-        android:scrollbars="none">
+        app:layout_constraintTop_toBottomOf="@+id/upperBar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -85,11 +85,28 @@
             <!--시간 탭-->
             <LinearLayout
                 android:id="@+id/timeLine"
-                android:layout_width="65dp"
+                android:layout_width="57dp"
                 android:layout_height="1360dp"
                 android:layout_marginStart="8dp"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/time6"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:text="06:00"
+                    android:textColor="#000000"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/time7"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:text="07:00"
+                    android:textColor="#000000"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/time8"
@@ -97,7 +114,7 @@
                     android:layout_height="80dp"
                     android:text="08:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -106,7 +123,7 @@
                     android:layout_height="80dp"
                     android:text="09:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -115,7 +132,7 @@
                     android:layout_height="80dp"
                     android:text="10:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -124,7 +141,7 @@
                     android:layout_height="80dp"
                     android:text="11:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -133,7 +150,7 @@
                     android:layout_height="80dp"
                     android:text="12:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -142,7 +159,7 @@
                     android:layout_height="80dp"
                     android:text="13:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -151,7 +168,7 @@
                     android:layout_height="80dp"
                     android:text="14:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -160,7 +177,7 @@
                     android:layout_height="80dp"
                     android:text="15:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -169,7 +186,7 @@
                     android:layout_height="80dp"
                     android:text="16:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -178,7 +195,7 @@
                     android:layout_height="80dp"
                     android:text="17:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -187,7 +204,7 @@
                     android:layout_height="80dp"
                     android:text="18:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -196,7 +213,7 @@
                     android:layout_height="80dp"
                     android:text="19:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -205,7 +222,7 @@
                     android:layout_height="80dp"
                     android:text="20:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -214,7 +231,7 @@
                     android:layout_height="80dp"
                     android:text="21:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -223,7 +240,7 @@
                     android:layout_height="80dp"
                     android:text="22:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -232,7 +249,7 @@
                     android:layout_height="80dp"
                     android:text="23:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -241,7 +258,7 @@
                     android:layout_height="80dp"
                     android:text="24:00"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -255,52 +272,62 @@
         </LinearLayout>
     </ScrollView>
 
-    <!--하단 작성바-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="0dp"
+    <!--플로팅 버튼-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fbtnAdd"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/plus"
+        app:backgroundTint="#2196F3"
+        app:elevation="6dp"
+        app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <EditText
-            android:id="@+id/editMemo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:ems="10"
-            android:hint="메모를 입력하세요"
-            android:inputType="textMultiLine|text"
-            android:lines="3"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/buttonSave"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-        <Button
-            android:id="@+id/buttonSave"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:background="@drawable/edgedaily"
-            android:text="저장"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/editMemo" />
+    <!--하단 작성바-->
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/constraintLayout"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent">-->
 
-        <Button
-            android:id="@+id/buttonDel"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:background="@drawable/edgedaily"
-            android:text="삭제"
-            app:layout_constraintBottom_toBottomOf="@+id/editMemo"
-            app:layout_constraintEnd_toEndOf="parent" />
+<!--        <EditText-->
+<!--            android:id="@+id/editMemo"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="메모를 입력하세요"-->
+<!--            android:inputType="textMultiLine|text"-->
+<!--            android:lines="3"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/buttonSave"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--        <Button-->
+<!--            android:id="@+id/buttonSave"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:background="@drawable/edgedaily"-->
+<!--            android:text="저장"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/editMemo"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/editMemo" />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
