@@ -5,7 +5,7 @@
     배경색을 의미, 이미지가 투명하다면 아래 색이 나타남
     투명하게는 @null 입력
     -->
-    <solid android:color="#60CCCCCC"/>
+    <solid android:color="#6D000000"/>
 
     <!--
     테두리 색상

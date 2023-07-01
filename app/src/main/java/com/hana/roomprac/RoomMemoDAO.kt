@@ -15,5 +15,7 @@ interface RoomMemoDAO {
     @Delete
     fun delete(memo:RoomMemo)
 
+
+
     // dao 인터페이스는 중괄호가 없음 @로 인터페이스 이름만 있으면 room이 몸체를 생성
 }

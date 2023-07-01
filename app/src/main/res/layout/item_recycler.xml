@@ -15,7 +15,7 @@
         android:layout_marginTop="8dp"
         android:text="01"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/textContent"
+        app:layout_constraintStart_toStartOf="@+id/textTitle"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -48,7 +48,7 @@
         app:srcCompat="@drawable/delete" />
 
     <TextView
-        android:id="@+id/textContent"
+        android:id="@+id/textTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"

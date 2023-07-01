@@ -35,10 +35,10 @@ class DiaryActivity : AppCompatActivity() {
 
             ivComplete.setOnClickListener {// 화면 전환
                 val title = diaryTitle.text.toString()
-//                val content = diaryContent.text.toString()
                 if(title.isNotEmpty()) {
+                    val content = diaryContent.text.toString()
                     val datetime = System.currentTimeMillis() // 시간 가져오기
-                    val memo = RoomMemo(title, datetime)
+                    val memo = RoomMemo(title, content, datetime)
                     insertMemo(memo)
 
                     val intent = Intent(this@DiaryActivity, MainActivity::class.java)

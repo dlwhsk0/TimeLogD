@@ -1,8 +1,14 @@
 package com.hana.roomprac
 
+import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
@@ -11,8 +17,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-
-
 class MainActivity : AppCompatActivity() {
 
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
@@ -58,6 +62,38 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+//    fun update(memo: RoomMemo) { // 직렬화 필요
+//no 번호를 넘겨주면 되지
+//        val intent = Intent(this@MainActivity, DiaryActivity::class.java)
+//        startActivity(intent)
+//    }
+    fun showSettingPopup(memo: RoomMemo) { // 삭제 확인 팝업
+        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val view = inflater.inflate(R.layout.delete_dialog, null)
+
+        val alertDialog = AlertDialog.Builder(this)
+            .create()
+
+        val tvCancel = view.findViewById<TextView>(R.id.tvCancel)
+        tvCancel.setOnClickListener {
+            alertDialog.dismiss()
+        }
+
+        val tvDelete = view.findViewById<TextView>(R.id.tvDelete)
+        tvDelete.setOnClickListener {
+            deleteMemo(memo)
+            alertDialog.dismiss()
+        }
+
+        alertDialog.setView(view)
+        alertDialog.show()
+
+        // 레이아웃 배경을 투명하게 (title 없애기)
+        alertDialog?.window?.setBackgroundDrawableResource(R.drawable.edge_popup)
+        alertDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+//        alertDialog.window?.setLayout(700, WindowManager.LayoutParams.WRAP_CONTENT)
+    }
+
     fun toast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
@@ -81,3 +117,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+
