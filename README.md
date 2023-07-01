@@ -19,3 +19,13 @@
 ### UI 설계
 
 <img width="760" alt="image" src="https://github.com/dlwhsk0/TimeLogD/assets/94193594/4cca1a42-c663-4a26-bb46-5a0c4bb4d81c">
+
+
+<br>
+
+## 2023-06-25 ~ 27
+### Daily item insert 구현
+
+## 2023-06-30
+### Daily item insert/Delete 구현
+- recycleview item_recycler.xml 디자인 일부 변경
