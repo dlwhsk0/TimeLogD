@@ -15,6 +15,9 @@
             android:name=".DiaryActivity"
             android:exported="false" />
         <activity
+            android:name=".NewDiaryActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -9,25 +9,15 @@
     <!--    메모 번호 메모 내용-->
 
     <TextView
-        android:id="@+id/textNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="01"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/textTitle"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/textDatetime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="2023/06/25 03:13"
+        android:layout_marginTop="12dp"
+        android:text="03:13 - 05:23"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/textNo"
-        app:layout_constraintTop_toTopOf="@+id/textNo" />
+        app:layout_constraintStart_toStartOf="@+id/textTitle"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ivReport"
@@ -52,8 +42,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginBottom="32dp"
         android:text="메모 내용\n두번째 줄"
         android:textColor="#0061C8"

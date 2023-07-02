@@ -30,12 +30,15 @@ class RecyclerAdapter(val roomMemoList: List<RoomMemo>) : RecyclerView.Adapter<R
         fun setMemo(roomMemo:RoomMemo) { // onbind 혹은 bind라는 이름을 많이 쓰는 듯
             // 아이템 리사이클 화면에 메모에 있는 값들을 세팅해주는 코드
             with(binding) {
-                textNo.text = "${roomMemo.no}" // Long? 타입을 String 변수에 넣기 위해
                 textTitle.text = roomMemo.title
 
                 // 날짜 형태로 변환
-                val sdf = SimpleDateFormat("yyyy/MM/dd hh:mm")
-                textDatetime.text = sdf.format(roomMemo.datetime)
+                val sdfhhmm = SimpleDateFormat("hh:mm")
+                textDatetime.text = sdfhhmm.format(roomMemo.datetime) + " - " + sdfhhmm.format(roomMemo.datetimeEnd)
+
+                itemView.setOnClickListener {
+                    mainActivity?.goToDiary(roomMemo)
+                }
 
                 ivReport.setOnClickListener {
                     mainActivity?.toast("작성")
@@ -43,7 +46,7 @@ class RecyclerAdapter(val roomMemoList: List<RoomMemo>) : RecyclerView.Adapter<R
                 }
 
                 ivDelete.setOnClickListener {
-                    mainActivity?.showSettingPopup(roomMemo)
+                    mainActivity?.deleteCheckPopup(roomMemo)
                 }
 
             }

@@ -19,9 +19,13 @@ class RoomMemo { // 클래스 자체는 테이블, 변수 하나하나는 컬럼
     @ColumnInfo(name = "date") // 이름을 내가 임의로 정하는 거 datetime은 자동으로 실제 시간을 넣어줌
     var datetime: Long = 0
 
-    constructor(title:String, content:String, datetime:Long) { // 편리하게 사용하기 위해 생성자 작성
+    @ColumnInfo
+    var datetimeEnd: Long = 0
+
+    constructor(title:String, content:String, datetime:Long, datetimeEnd:Long) { // 편리하게 사용하기 위해 생성자 작성
         this.title = title
         this.content = content
         this.datetime = datetime
+        this.datetimeEnd = datetimeEnd
     }
 }

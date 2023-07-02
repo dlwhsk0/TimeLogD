@@ -23,10 +23,10 @@
 
         <ImageView
             android:id="@+id/ivProfile"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/emojicat" />
+            app:srcCompat="@drawable/cat" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -56,10 +56,10 @@
 
         <ImageView
             android:id="@+id/ivCalendar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/emojical" />
+            app:srcCompat="@drawable/calendar31" />
 
     </LinearLayout>
 
@@ -92,47 +92,37 @@
 
                 <ImageView
                     android:id="@+id/ivComplete"
-                    android:layout_width="25dp"
+                    android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toEndOf="@+id/view"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/pencil" />
+                    app:srcCompat="@drawable/check" />
 
-                <TextView
+                <EditText
                     android:id="@+id/diaryTitle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="8dp"
                     android:background="@null"
                     android:hint="제목을 입력하세요."
                     android:textColor="#000000"
                     android:textSize="30sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@+id/ivComplete"
-                    app:layout_constraintStart_toStartOf="@+id/imageView"
+                    app:layout_constraintStart_toStartOf="@+id/diaryTimeStart"
                     app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/diaryTimeStart"
-                    app:layout_constraintStart_toStartOf="@+id/view"
-                    app:layout_constraintTop_toTopOf="@+id/diaryTimeStart"
-                    app:srcCompat="@drawable/emojiclock" />
 
                 <TextView
                     android:id="@+id/diaryTimeStart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     android:text="14:32"
                     android:textColor="#000000"
                     android:textSize="20sp"
-                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintStart_toStartOf="@+id/view"
                     app:layout_constraintTop_toBottomOf="@+id/diaryTitle" />
 
                 <View
@@ -180,12 +170,12 @@
                     app:layout_constraintStart_toStartOf="@+id/view"
                     app:layout_constraintTop_toBottomOf="@+id/view">
 
-                    <TextView
+                    <EditText
                         android:id="@+id/diaryContent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@null"
-                        android:hint="내용을 입력하세요"
+                        android:hint="내용을 입력하세요."
                         android:textColor="#000000"
                         android:textSize="20sp" />
 

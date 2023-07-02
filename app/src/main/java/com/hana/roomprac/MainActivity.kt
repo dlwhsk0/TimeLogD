@@ -17,14 +17,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+
 class MainActivity : AppCompatActivity() {
 
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     lateinit var helper:RoomHelper
-
     lateinit var memoAdapter: RecyclerAdapter
     val memoList = mutableListOf<RoomMemo>() // 초기화
-
     lateinit var memoDAO:RoomMemoDAO
 
     init {
@@ -55,19 +54,29 @@ class MainActivity : AppCompatActivity() {
             recyclerMemo.layoutManager = LinearLayoutManager(this@MainActivity)
 
             fbtnAdd.setOnClickListener {
-                val intent = Intent(this@MainActivity, DiaryActivity::class.java)
+                val intent = Intent(this@MainActivity, NewDiaryActivity::class.java)
                 startActivity(intent)
             }
 
         }
     }
 
-//    fun update(memo: RoomMemo) { // 직렬화 필요
-//no 번호를 넘겨주면 되지
-//        val intent = Intent(this@MainActivity, DiaryActivity::class.java)
-//        startActivity(intent)
-//    }
-    fun showSettingPopup(memo: RoomMemo) { // 삭제 확인 팝업
+    fun goToDiary(memo: RoomMemo) {
+        println("goToDiary 실행")
+        val intent = Intent(this, DiaryActivity::class.java)
+            .putExtra("title", memo.title)
+            .putExtra("content" , memo.content)
+            .putExtra("startTime", memo.datetime.toString())
+            .putExtra("endTime", memo.datetimeEnd.toString())
+        startActivity(intent)
+    }
+
+
+    fun update(memo: RoomMemo) { // 직렬화 필요
+        // TODO("no 번호 넘겨줘서 업데이트하면 되지 않을까?")
+    }
+
+    fun deleteCheckPopup(memo: RoomMemo) { // 삭제 확인 팝업
         val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val view = inflater.inflate(R.layout.delete_dialog, null)
 
@@ -94,10 +103,6 @@ class MainActivity : AppCompatActivity() {
 //        alertDialog.window?.setLayout(700, WindowManager.LayoutParams.WRAP_CONTENT)
     }
 
-    fun toast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
     fun deleteMemo(memo: RoomMemo) {
         CoroutineScope(Dispatchers.IO).launch {
             memoDAO.delete(memo = memo)
@@ -115,6 +120,10 @@ class MainActivity : AppCompatActivity() {
                 memoAdapter.notifyDataSetChanged() // 마지막에 반영된 목록이 화면에 뿌려지게 됨
             }
         }
+    }
+
+    fun toast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
 

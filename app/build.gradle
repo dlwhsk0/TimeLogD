@@ -27,6 +27,9 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+
+        // LocalDateTime 이 Api 26 이하 지원을 위해서 추가
+//        coreLibraryDesugaringEnabled true
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -55,6 +58,9 @@ dependencies {
 
     // 머터리얼 디자인 사용
     implementation 'com.google.android.material:material:1.1.0-beta01'
+
+    // 하위 버전에서도 LocalDate, LocalDateTime 클래스를 사용 가능하도록
+//    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
