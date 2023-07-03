@@ -12,6 +12,9 @@
         android:theme="@style/Theme.RoomPrac"
         tools:targetApi="31">
         <activity
+            android:name=".UpdateDiaryActivity"
+            android:exported="false" />
+        <activity
             android:name=".DiaryActivity"
             android:exported="false" />
         <activity

@@ -1,5 +1,6 @@
 package com.hana.roomprac
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.hana.roomprac.databinding.ActivityDiaryBinding
@@ -15,8 +16,6 @@ class DiaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        println("DiaryActivity 열림")
-
         val memoTitle = intent.getStringExtra("title")
         val memoContent = intent.getStringExtra("content")
         val memoStartTime = intent.getStringExtra("startTime")!!.toLong()
@@ -30,6 +29,16 @@ class DiaryActivity : AppCompatActivity() {
             diaryContent.setText(memoContent)
             diaryTimeStart.text = startTime
             diaryTimeEnd.text = endTime
+
+            ivComplete.setOnClickListener {
+                val intent = Intent(this@DiaryActivity, UpdateDiaryActivity::class.java)
+                    .putExtra("title", memoTitle)
+                    .putExtra("content", memoContent)
+                    .putExtra("starTime", memoStartTime)
+                    .putExtra("endTime", memoEndTime)
+                startActivity(intent)
+                // TODO("이렇게 하나하나 말고 position을 넘겨줘서 memoList[position]으로 데이터를 사용하는게 더 좋을 것 같은데 어떻게 하는거지")
+            }
         }
 
     }

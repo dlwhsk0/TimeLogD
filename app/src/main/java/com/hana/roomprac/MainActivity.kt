@@ -71,11 +71,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-
-    fun update(memo: RoomMemo) { // 직렬화 필요
-        // TODO("no 번호 넘겨줘서 업데이트하면 되지 않을까?")
-    }
-
     fun deleteCheckPopup(memo: RoomMemo) { // 삭제 확인 팝업
         val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val view = inflater.inflate(R.layout.delete_dialog, null)

@@ -42,7 +42,6 @@ class RecyclerAdapter(val roomMemoList: List<RoomMemo>) : RecyclerView.Adapter<R
 
                 ivReport.setOnClickListener {
                     mainActivity?.toast("작성")
-//                    mainActivity?.update(roomMemo)
                 }
 
                 ivDelete.setOnClickListener {
